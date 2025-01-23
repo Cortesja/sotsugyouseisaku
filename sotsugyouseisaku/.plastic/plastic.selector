@@ -1,0 +1,4 @@
+repository "sotsugyouseisaku/sotsugyouseisaku@15668725661696@cloud"
+  path "/"
+    br "/main"
+    co "/main"
