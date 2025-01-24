@@ -21,7 +21,10 @@ public class Cursor : MonoBehaviour
     {
         ray_ = camera_.ScreenPointToRay(Input.mousePosition);
         isHit_ = Physics.Raycast(
-            ray_, out raycastHit_, 1000, LayerMask.GetMask(FLOOR_LAYER_NAME));
+            ray_, 
+            out raycastHit_,
+            1000,
+            LayerMask.GetMask(FLOOR_LAYER_NAME));
     }
 
     public bool GetIsHit() { return isHit_; }

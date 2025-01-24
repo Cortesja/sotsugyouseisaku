@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     private float moveSpeed_ = 1f;
     private Rigidbody rb_;
     private Vector2 moveInput_;
+    [SerializeField]
     private Cursor cursor_;
 
     public void OnMove(InputValue value)
