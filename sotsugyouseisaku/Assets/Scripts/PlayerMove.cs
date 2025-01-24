@@ -53,6 +53,7 @@ public class PlayerMove : MonoBehaviour
         transform.LookAt(lookAt);
 
         // Rotate 180 degrees around the Y-axis
+        //ブレンダーのモデルの向きは後ろ向きだったので
         Vector3 testAngle = new Vector3(0f, 180f, 0f);
         transform.rotation *= Quaternion.Euler(testAngle);
     }

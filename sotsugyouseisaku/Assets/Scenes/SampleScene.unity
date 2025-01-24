@@ -562,6 +562,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2073343312081608990, guid: dfadd1880baec614cbfa489f17ae3f84, type: 3}
+      propertyPath: cursor_
+      value: 
+      objectReference: {fileID: 330585548}
+    - target: {fileID: 2073343312081608990, guid: dfadd1880baec614cbfa489f17ae3f84, type: 3}
+      propertyPath: moveSpeed_
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4160146627742278887, guid: dfadd1880baec614cbfa489f17ae3f84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -602,6 +610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5506626763193227601, guid: dfadd1880baec614cbfa489f17ae3f84, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6038054445066534606, guid: dfadd1880baec614cbfa489f17ae3f84, type: 3}
       propertyPath: m_Name
       value: Player
@@ -611,6 +623,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfadd1880baec614cbfa489f17ae3f84, type: 3}
+--- !u!1001 &775217392
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2678228143712954123, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9818628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8060789
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.16145515
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748305002206597396, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5941390310657305615, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
+      propertyPath: m_Name
+      value: SpellCard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ade8b0cc28f446648af4bf7fadeacd2e, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,3 +991,4 @@ SceneRoots:
   - {fileID: 596552430}
   - {fileID: 615815106}
   - {fileID: 759268409}
+  - {fileID: 775217392}
