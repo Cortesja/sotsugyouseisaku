@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Assertions;
 
 [RequireComponent (typeof(Rigidbody))]
 public class PlayerMove : MonoBehaviour
@@ -33,11 +34,26 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb_ = GetComponent<Rigidbody>();
+
+        bool isGet =
+            Camera.main.TryGetComponent<Cursor>(out cursor_);
+        Assert.IsTrue(isGet, "componenté∏îs");
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb_.angularVelocity = Vector3.zero;
+        rb_.linearVelocity = Vector3.zero;
+        if (!cursor_.GetIsHit()) { return; }
+        RaycastHit raycastHit = cursor_.GetRaycastHit();
+        Vector3 lookAt = raycastHit.point;
+
+        lookAt.y = transform.position.y;
+
+        transform.LookAt(lookAt);
+
+        // Rotate 180 degrees around the Y-axis
+        Vector3 testAngle = new Vector3(0f, 180f, 0f);
+        transform.rotation *= Quaternion.Euler(testAngle);
     }
 }
