@@ -21,6 +21,15 @@ public class SpellCard : MonoBehaviour
     private Collider collider_;
     private Renderer renderer_;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Debug.Log("colliding....");
+            collision.gameObject.SetActive(false);
+        }
+    }
+
     private void CheckCardType()
     {
         switch (cardType_)
@@ -52,14 +61,6 @@ public class SpellCard : MonoBehaviour
         if (renderer_ == null) { Debug.Log("Renederer not found on game object"); }
 
         CheckCardType();
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Item"))
-        {
-            Debug.Log("colliding....");
-            collision.gameObject.SetActive(false);
-        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

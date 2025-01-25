@@ -12,6 +12,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private Cursor cursor_;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Debug.Log("colliding....");
+            collision.gameObject.SetActive(false);
+        }
+    }
+
     public void OnMove(InputValue value)
     {
        moveInput_ = value.Get<Vector2>();
@@ -43,7 +52,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb_.linearVelocity = Vector3.zero;
+        rb_.velocity = Vector3.zero;
         if (!cursor_.GetIsHit()) { return; }
         RaycastHit raycastHit = cursor_.GetRaycastHit();
         Vector3 lookAt = raycastHit.point;
