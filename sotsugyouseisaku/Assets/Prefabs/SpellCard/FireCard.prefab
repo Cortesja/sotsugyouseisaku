@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 2856177291486736204}
   - component: {fileID: 2678228143712954123}
   - component: {fileID: 3718816048913635982}
+  - component: {fileID: 37993763115169180}
+  - component: {fileID: 2383350401801636922}
   m_Layer: 0
-  m_Name: SpellCard
+  m_Name: FireCard
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5941390310657305615}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -4.7139444, y: 0.80607796, z: -3.5691109}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,7 +102,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -118,8 +120,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958b4355932e4da40a3d2af93a1ee861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardType_: 1
-  fireMaterial: {fileID: 2100000, guid: 92c2480aff9e196429f50ff022b8ee92, type: 2}
-  thunderMaterial: {fileID: 2100000, guid: 2f4d8e489ee2e06488f66a2eddfa92f7, type: 2}
-  waterMaterial: {fileID: 2100000, guid: 0e900698c3b104444ad3760b463635fb, type: 2}
+  material_: {fileID: 2100000, guid: 92c2480aff9e196429f50ff022b8ee92, type: 2}
   rotationSpeed_: 0.5
+--- !u!114 &37993763115169180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941390310657305615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f24f131ff0aa34cae9c0e3f048a51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 56470deb70a526e4c899ad96f7a30c37, type: 2}
+--- !u!114 &2383350401801636922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941390310657305615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c98fc9fe4c3c0441a7ba4cb512870e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 56470deb70a526e4c899ad96f7a30c37, type: 2}

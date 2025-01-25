@@ -1,4 +1,6 @@
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
+using UnityEngine.Rendering;
 
 [RequireComponent (typeof(Collider))]
 
@@ -11,43 +13,12 @@ public class SpellCard : MonoBehaviour
         kWater,
         kTypeCount
     };
-    [SerializeField] CardType cardType_;
-    [SerializeField] private Material fireMaterial;
-    [SerializeField] private Material thunderMaterial;
-    [SerializeField] private Material waterMaterial;
+    [SerializeField] private Material material_;
     [SerializeField] public float rotationSpeed_ = 0.5f;
 
     private Camera camera_;
     private Collider collider_;
     private Renderer renderer_;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
-
-    private void CheckCardType()
-    {
-        switch (cardType_)
-        {
-            case CardType.kFire:
-                renderer_.material = fireMaterial;
-                break;
-                case CardType.kThunder: 
-                renderer_.material = thunderMaterial;
-                break;
-                case CardType.kWater:
-                renderer_.material = waterMaterial;
-                break;
-            default:
-                renderer_.material = fireMaterial;
-                Debug.Log("material not chosen. def fire.");
-                break;
-        }
-    }
 
     private void Awake()
     {
@@ -59,7 +30,7 @@ public class SpellCard : MonoBehaviour
         if (collider_ == null) { Debug.Log("no collider"); }
         if (renderer_ == null) { Debug.Log("Renederer not found on game object"); }
 
-        CheckCardType();
+        renderer_.material = material_;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
