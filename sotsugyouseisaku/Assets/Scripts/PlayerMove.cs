@@ -12,15 +12,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private Cursor cursor_;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Item"))
-        {
-            Debug.Log("colliding....");
-            collision.gameObject.SetActive(false);
-        }
-    }
-
     public void OnMove(InputValue value)
     {
        moveInput_ = value.Get<Vector2>();

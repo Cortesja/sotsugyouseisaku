@@ -60,9 +60,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -121,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958b4355932e4da40a3d2af93a1ee861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardType_: 2
+  cardType_: 1
   fireMaterial: {fileID: 2100000, guid: 92c2480aff9e196429f50ff022b8ee92, type: 2}
   thunderMaterial: {fileID: 2100000, guid: 2f4d8e489ee2e06488f66a2eddfa92f7, type: 2}
   waterMaterial: {fileID: 2100000, guid: 0e900698c3b104444ad3760b463635fb, type: 2}

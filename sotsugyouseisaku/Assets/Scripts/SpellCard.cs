@@ -21,12 +21,11 @@ public class SpellCard : MonoBehaviour
     private Collider collider_;
     private Renderer renderer_;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Item"))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("colliding....");
-            collision.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 
