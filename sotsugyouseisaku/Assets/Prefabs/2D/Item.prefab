@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6507229758901374673}
   - component: {fileID: 2663311286346640462}
   - component: {fileID: 3689090972369015360}
-  - component: {fileID: 5947075699780837204}
+  - component: {fileID: 2022718806483989097}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5947075699780837204
+--- !u!114 &2022718806483989097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3689090972369015360}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: d811063fc4a54ff448354bb6d88caed0, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2312247578042485079
 GameObject:
   m_ObjectHideFlags: 0
