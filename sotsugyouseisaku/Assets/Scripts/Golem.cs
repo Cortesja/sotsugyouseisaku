@@ -23,7 +23,6 @@ public class Golem : MonoBehaviour
 
                 transform.position += direction * speed_ * Time.deltaTime;
                 Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
-                targetRotation.y = 0;
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * speed_);
             }
         }   
@@ -38,6 +37,6 @@ public class Golem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GolemMovement();
+        //GolemMovement();
     }
 }

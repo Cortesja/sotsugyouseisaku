@@ -10,6 +10,7 @@ public class PlayerFollower : MonoBehaviour
 
     private Cursor cursor_;
     private Vector3 offset_;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
