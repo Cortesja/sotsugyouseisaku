@@ -12,6 +12,14 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject inventoryItem;
     [SerializeField] InventoryItemManager[] inventoryItems;
 
+    private AttackManager attackManager_;
+
+    public void Start()
+    {
+        GameObject obj = GameObject.FindGameObjectWithTag("Player");
+        attackManager_ = obj.GetComponentInChildren<AttackManager>();
+    }
+
     private void Awake()
     {
         Instance = this;
@@ -47,6 +55,11 @@ public class InventoryManager : MonoBehaviour
         SetInventoryItems();
     }
 
+    public SpellType SetSpellType(Item items)
+    {
+        return items.spellType;
+    }
+
     public void SetInventoryItems()
     {
         inventoryItems = itemContent.GetComponentsInChildren<InventoryItemManager>();
@@ -54,6 +67,7 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Count; i++)
         {
             inventoryItems[i].AddItem(items[i]);
+            inventoryItems[i].AddStaff(attackManager_); //i want to call the function here
         }
     }
 }

@@ -6,13 +6,6 @@ using UnityEngine.Rendering;
 
 public class SpellCard : MonoBehaviour
 {
-    enum CardType
-    {
-        kFire,
-        kThunder,
-        kWater,
-        kTypeCount
-    };
     [SerializeField] private Material material_;
     [SerializeField] public float rotationSpeed_ = 0.5f;
 

@@ -5,21 +5,19 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    //private Camera camera_;
-    //Vector3 mousePos_;
-
-    Vector3 temp;
-
+    SpellType spellType_;
     private Cursor cursor_;
-
-    private const string FLOOR_LAYER_NAME = "Floor";
-
     private Vector3 lookAtPoint_;
     private float speed_ = 30.0f;
 
+    bool canShoot = false;
+
     [SerializeField, Header("Prefabs")]
-    private FireBall fireballPrefab_;
-    [SerializeField] GameObject projectile_;
+    private GameObject fireballPrefab_;
+    [SerializeField]
+    private GameObject thunderPrefab_;
+    [SerializeField]
+    private GameObject waterPrefab_;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +33,12 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (spellType_ == SpellType.kWater)
+        {
+            canShoot = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
             ShootProjectile();
         }
@@ -64,9 +67,28 @@ public class AttackManager : MonoBehaviour
         InstantiateProjectile();
     }
 
+    public void SetSpell(Item item)
+    {
+        spellType_ = item.spellType;
+    }
+
     void InstantiateProjectile()
     {
-        var projectileObj = Instantiate(projectile_, transform.position, Quaternion.identity) as GameObject;
-       projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
+        GameObject projectileObj;
+        switch (spellType_)
+        {
+            case SpellType.kFire:
+                projectileObj = Instantiate(fireballPrefab_, transform.position, Quaternion.identity) as GameObject;
+                projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
+                break;
+            case SpellType.kThunder:
+                projectileObj = Instantiate(thunderPrefab_, transform.position, Quaternion.identity) as GameObject;
+                projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
+                break;
+            case SpellType.kWater:
+                projectileObj = Instantiate(waterPrefab_, transform.position, Quaternion.identity) as GameObject;
+                projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
+                break;
+        }
     }
 }
