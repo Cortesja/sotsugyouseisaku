@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278811574277612169}
+  - component: {fileID: 4939248655228837368}
   m_Layer: 0
   m_Name: LowerBody
   m_TagString: Untagged
@@ -37,6 +38,27 @@ Transform:
   - {fileID: 7548053651503124462}
   m_Father: {fileID: 5782905078148040609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4939248655228837368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222381486285160052}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4730115, y: 1.5662603, z: 0.71321106}
+  m_Center: {x: 0, y: -0.21686983, z: 1.5415552}
 --- !u!1 &8330528382166863930
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +68,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7603589732328402694}
+  - component: {fileID: 4805741162164158286}
   m_Layer: 0
   m_Name: UpperBody
   m_TagString: Untagged
@@ -79,6 +102,27 @@ Transform:
   - {fileID: 1255505819981567320}
   m_Father: {fileID: 5782905078148040609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4805741162164158286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330528382166863930}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8752515, y: 2.5327003, z: 0.645532}
+  m_Center: {x: -0.041729093, y: -0.39128196, z: 0.677234}
 --- !u!1 &9148919417189041368
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,12 +133,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5782905078148040609}
   - component: {fileID: 5588564281343234103}
-  - component: {fileID: 7022013098120698933}
   - component: {fileID: 6351363953301915398}
+  - component: {fileID: 7022013098120698933}
   - component: {fileID: 3161096278624921451}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,27 +175,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7022013098120698933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9148919417189041368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5345a01568c354ea475029770703be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed_: 2
-  player_: {fileID: 0}
-  stopDistance_: 1
+  m_Size: {x: 1, y: 2.3439937, z: 2.1041045}
+  m_Center: {x: 0, y: 1.1972961, z: 1}
 --- !u!54 &6351363953301915398
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177,8 +206,23 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &7022013098120698933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9148919417189041368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5345a01568c354ea475029770703be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed_: 2
+  player_: {fileID: 2908471190334192321, guid: 92ff95e2a370fdf499b397e7653c3a9b, type: 3}
+  stopDistance_: 1
 --- !u!114 &3161096278624921451
 MonoBehaviour:
   m_ObjectHideFlags: 0
