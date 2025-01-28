@@ -449,14 +449,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2946628758417047483}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.37, y: 0.777, z: -0.062}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8542658061853035980}
   m_Father: {fileID: 2908471190334192321}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &2451893043025416988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e6a6b2cc0aebf44ab8b1d4a47cba3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_: {fileID: 5578555681382966829}
   fireballPrefab_: {fileID: 0}
   projectile_: {fileID: 1283302202710788520, guid: 103d9be594c0619448f7fc7aa747c551, type: 3}
 --- !u!1 &3108598629361055508

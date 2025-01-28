@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5196598446239483064}
+  - {fileID: 5856500174701886050}
   - {fileID: 2710201070435503102}
   - {fileID: 1129474979023586283}
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-6470432927585761976
 Rigidbody:
@@ -5130,7 +5130,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!1001 &2514448417110329154
+--- !u!1001 &4304716267573115288
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -5187,8 +5187,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22408ec255c0bef489496f23f17de2ba, type: 3}
---- !u!4 &5196598446239483064 stripped
+--- !u!4 &5856500174701886050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7708785159328498682, guid: 22408ec255c0bef489496f23f17de2ba, type: 3}
-  m_PrefabInstance: {fileID: 2514448417110329154}
+  m_PrefabInstance: {fileID: 4304716267573115288}
   m_PrefabAsset: {fileID: 0}
