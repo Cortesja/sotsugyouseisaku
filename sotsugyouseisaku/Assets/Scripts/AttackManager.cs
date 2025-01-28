@@ -8,14 +8,16 @@ public class AttackManager : MonoBehaviour
     //private Camera camera_;
     //Vector3 mousePos_;
 
+    Vector3 temp;
+
     private Cursor cursor_;
 
     private const string FLOOR_LAYER_NAME = "Floor";
 
     private Vector3 destination_;
     private Vector3 lookAtPoint_;
-    private float speed_ = 30.0f; 
-    public Transform player_;
+    private float speed_ = 30.0f;
+    [SerializeField] private Transform player_;
 
     [SerializeField, Header("Prefabs")]
     private FireBall fireballPrefab_;
@@ -87,6 +89,7 @@ public class AttackManager : MonoBehaviour
         float h = player_.position.y - cursorPoint.y;
         float cLength = h / Mathf.Cos(angleRad);
         lookAtPoint_ = cursorPoint + toCamera * cLength;
+
         transform.LookAt(lookAtPoint_);
 
         ///////////////////////////////////////////////////////////
@@ -94,17 +97,15 @@ public class AttackManager : MonoBehaviour
         //debug
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 2.0f);
 
-        InstantiateProjectile(player_);
+        InstantiateProjectile();
     }
 
-    void InstantiateProjectile(Transform player)
+    void InstantiateProjectile()
     {
         //adjust y value so that can see
         Vector3 offset = player_.position;
         offset.y += 1.0f;
         var projectileObj = Instantiate(projectile_, offset, Quaternion.identity) as GameObject;
         projectileObj.GetComponent<Rigidbody>().velocity = (destination_ - player_.position).normalized * speed_;
-
-
     }
 }
