@@ -24,14 +24,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4d339d8e4fcc5e641a26687f3b5e8e5d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d8238c78f3c2e6428845d539145ac8c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DiffuseThreshold: 0.45
-    - _Edge: 0.25
-    - _SpecularThreshold: 0.33
+    - _DiffuseThreshold: 0.49
+    - _Edge: 0.24
+    - _SpecularThreshold: 0.32
     m_Colors:
-    - _Color: {r: 0, g: 0.7224373, b: 0.85660374, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
