@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283302202710788520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f734981826ffd439ce2e89ede00425, type: 3}
+  m_Script: {fileID: 11500000, guid: d805d40f04e49434390e3f0cae0e2a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1521389307220034625
@@ -5090,7 +5090,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.32213485, b: 0.06132078, a: 1}
+      key0: {r: 0.039248828, g: 0.90949947, b: 0.9245283, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -5138,6 +5138,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590261890934777825}
     m_Modifications:
+    - target: {fileID: 946423865938851411, guid: 7d51888e6d9474e45a2ac55b0502b073, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 946423865938851411, guid: 7d51888e6d9474e45a2ac55b0502b073, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 946423865938851411, guid: 7d51888e6d9474e45a2ac55b0502b073, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 946423865938851411, guid: 7d51888e6d9474e45a2ac55b0502b073, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool hasSpell_;
     public static Player Instance;
     private void Awake()
     {
         Instance = this;
     }
-
-    private void SetSpell()
+    public void SetHasSpell(bool vaule)
     {
-        
+        hasSpell_ = vaule;
     }
+    public bool GetHasSpell() { return hasSpell_; }
 }

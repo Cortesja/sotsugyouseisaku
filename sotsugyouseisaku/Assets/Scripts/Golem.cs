@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Golem : MonoBehaviour
 {
+    //[SerializeField] private int Hp_ = 100;
     [SerializeField] float speed_ = 2.0f;
     private Rigidbody rb_;
     [SerializeField] Transform player_;

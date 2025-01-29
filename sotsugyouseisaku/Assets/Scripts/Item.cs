@@ -9,7 +9,7 @@ public class Item : ScriptableObject
 {
     public int id;
     public string itemName;
-    public int value;
+    public int dmg;
     public Sprite icon;
     [SerializeField] public SpellType spellType;
 }

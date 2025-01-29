@@ -11,6 +11,8 @@ public class InventoryItemManager : MonoBehaviour
     public void UseItem()
     {
         attackManager_.SetSpell(item_);
+        attackManager_.SetSpellDmg(item_);
+        Player.Instance.SetHasSpell(true);
         InventoryManager.Instance.Remove(item_);
         Destroy(gameObject);
     }

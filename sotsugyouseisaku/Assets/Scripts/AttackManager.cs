@@ -9,8 +9,7 @@ public class AttackManager : MonoBehaviour
     private Cursor cursor_;
     private Vector3 lookAtPoint_;
     private float speed_ = 30.0f;
-
-    bool canShoot = false;
+    private int dmg_;
 
     [SerializeField, Header("Prefabs")]
     private GameObject fireballPrefab_;
@@ -33,14 +32,10 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spellType_ == SpellType.kWater)
-        {
-            canShoot = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Player.Instance.GetHasSpell())
         {
             ShootProjectile();
+            Player.Instance.SetHasSpell(false);
         }
     }
 
@@ -72,13 +67,27 @@ public class AttackManager : MonoBehaviour
         spellType_ = item.spellType;
     }
 
+    public SpellType GetSpell()
+    {
+        return spellType_;
+    }
+
+    public void SetSpellDmg(Item item)
+    {
+        dmg_ = item.dmg;
+    }
+    public int GetSpellDmg()
+    {
+        return dmg_;
+    }
+
     void InstantiateProjectile()
     {
         GameObject projectileObj;
         switch (spellType_)
         {
             case SpellType.kFire:
-                projectileObj = Instantiate(fireballPrefab_, transform.position, Quaternion.identity) as GameObject;
+                projectileObj = Instantiate(fireballPrefab_, transform.position, Quaternion.identity)as GameObject;
                 projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
                 break;
             case SpellType.kThunder:

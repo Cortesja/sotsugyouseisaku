@@ -60,6 +60,11 @@ public class InventoryManager : MonoBehaviour
         return items.spellType;
     }
 
+    public int SetSpellDmg(Item items)
+    {
+        return items.dmg;
+    }
+
     public void SetInventoryItems()
     {
         inventoryItems = itemContent.GetComponentsInChildren<InventoryItemManager>();
@@ -67,7 +72,7 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Count; i++)
         {
             inventoryItems[i].AddItem(items[i]);
-            inventoryItems[i].AddStaff(attackManager_); //i want to call the function here
+            inventoryItems[i].AddStaff(attackManager_);
         }
     }
 }
