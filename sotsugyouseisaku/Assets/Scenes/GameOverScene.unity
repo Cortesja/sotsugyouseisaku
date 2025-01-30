@@ -191,6 +191,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &76748266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09d2abab49b90bf45ae562302bbbe678, type: 3}
+  m_PrefabInstance: {fileID: 1545725752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &76748268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76748266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099d61e966067fc4f80b8c422c1752dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  end: {x: 0, y: 2.5, z: 0}
 --- !u!1 &507856724
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,15 +816,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 09d2abab49b90bf45ae562302bbbe678, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09d2abab49b90bf45ae562302bbbe678, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09d2abab49b90bf45ae562302bbbe678, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09d2abab49b90bf45ae562302bbbe678, type: 3}
       propertyPath: m_LocalRotation.w
@@ -847,7 +865,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09d2abab49b90bf45ae562302bbbe678, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76748268}
   m_SourcePrefab: {fileID: 100100000, guid: 09d2abab49b90bf45ae562302bbbe678, type: 3}
 --- !u!1 &1865886301
 GameObject:
@@ -862,6 +883,7 @@ GameObject:
   - component: {fileID: 1865886304}
   - component: {fileID: 1865886303}
   - component: {fileID: 1865886306}
+  - component: {fileID: 1865886307}
   m_Layer: 5
   m_Name: GameOverButton
   m_TagString: Untagged
@@ -984,6 +1006,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: TitleScene
+--- !u!114 &1865886307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865886301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da231f72fb2bb64198fbe96946ee9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
