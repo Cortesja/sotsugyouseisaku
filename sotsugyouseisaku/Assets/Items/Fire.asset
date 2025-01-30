@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   itemName: Fire SpellCard
-  value: 56
+  dmg: 5
   icon: {fileID: 21300000, guid: 6d446f436b5e3de42a1cf182f5dd5d74, type: 3}
+  spellType: 0
