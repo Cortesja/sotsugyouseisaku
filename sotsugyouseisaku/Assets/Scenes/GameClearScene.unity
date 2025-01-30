@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 116618140}
   - component: {fileID: 116618139}
   - component: {fileID: 116618138}
+  - component: {fileID: 116618142}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -293,6 +294,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &116618142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116618137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da231f72fb2bb64198fbe96946ee9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &169995614
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,11 +572,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4ef5e9cf6d3892449ba1d9b01c75b90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4ef5e9cf6d3892449ba1d9b01c75b90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4ef5e9cf6d3892449ba1d9b01c75b90, type: 3}
       propertyPath: m_LocalRotation.w
@@ -604,8 +617,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e4ef5e9cf6d3892449ba1d9b01c75b90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 524109729}
   m_SourcePrefab: {fileID: 100100000, guid: e4ef5e9cf6d3892449ba1d9b01c75b90, type: 3}
+--- !u!1 &524109728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e4ef5e9cf6d3892449ba1d9b01c75b90, type: 3}
+  m_PrefabInstance: {fileID: 524109727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &524109729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524109728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6faca593ae70142ac360165c8833fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  end: {x: 0, y: 2.5, z: 0}
 --- !u!1 &1438079346
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +653,7 @@ GameObject:
   - component: {fileID: 1438079349}
   - component: {fileID: 1438079348}
   - component: {fileID: 1438079351}
+  - component: {fileID: 1438079352}
   m_Layer: 5
   m_Name: GameClearButton
   m_TagString: Untagged
@@ -741,6 +776,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: TitleScene
+--- !u!114 &1438079352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438079346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da231f72fb2bb64198fbe96946ee9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1930594647
 GameObject:
   m_ObjectHideFlags: 0
