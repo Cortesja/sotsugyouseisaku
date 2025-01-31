@@ -87,14 +87,17 @@ public class AttackManager : MonoBehaviour
         switch (spellType_)
         {
             case SpellType.kFire:
+                speed_ = 7.0f;
                 projectileObj = Instantiate(fireballPrefab_, transform.position, Quaternion.identity)as GameObject;
                 projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
                 break;
             case SpellType.kThunder:
+                speed_ = 30.0f;
                 projectileObj = Instantiate(thunderPrefab_, transform.position, Quaternion.identity) as GameObject;
                 projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
                 break;
             case SpellType.kWater:
+                speed_ = 15.0f;
                 projectileObj = Instantiate(waterPrefab_, transform.position, Quaternion.identity) as GameObject;
                 projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
                 break;

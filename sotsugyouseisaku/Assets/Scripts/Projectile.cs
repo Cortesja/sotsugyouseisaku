@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     AttackManager attackManager_;
+    public GameObject impact_vfx;
 
     private void Start()
     {
@@ -14,18 +15,26 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (!other.CompareTag("Bullet") && !other.CompareTag("Player") && !other.CompareTag("Item"))
         {
-            Health healthComponent;
-            bool hasHealth = other.TryGetComponent(out healthComponent);
-            if (hasHealth)
+            if (other.CompareTag("Enemy"))
             {
-                healthComponent.Damage(attackManager_.GetSpellDmg());
+                Health healthComponent;
+                bool hasHealth = other.TryGetComponent(out healthComponent);
+                if (hasHealth)
+                {
+                    healthComponent.Damage(attackManager_.GetSpellDmg());
+                }
             }
-        }
-        if(!other.CompareTag("Bullet") && !other.CompareTag("Player"))
-        {
+
+            Vector3  contactPoint = other.transform.position;
+
+            var impact = Instantiate(impact_vfx, contactPoint, Quaternion.identity) as GameObject;
+
+            Destroy(impact, 2);
             Destroy(gameObject);
         }
+
+       
     }
 }

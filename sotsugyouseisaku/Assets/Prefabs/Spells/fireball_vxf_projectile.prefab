@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d805d40f04e49434390e3f0cae0e2a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impact_vfx: {fileID: 7235884425467386841, guid: 47845e62553289a49aa21948dd924883, type: 3}
 --- !u!1 &1521389307220034625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,7 +3775,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0

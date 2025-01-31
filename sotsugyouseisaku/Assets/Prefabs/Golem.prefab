@@ -2049,7 +2049,6 @@ GameObject:
   - component: {fileID: 3161096278624921451}
   - component: {fileID: 8150484712776100730}
   - component: {fileID: 2223015721447404100}
-  - component: {fileID: 2063775616589178319}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Enemy
@@ -2094,8 +2093,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.3439937, z: 2.4238634}
-  m_Center: {x: 0, y: 1.1972961, z: 0.84012055}
+  m_Size: {x: 1.061477, y: 2.3439937, z: 2.4238634}
+  m_Center: {x: 0.030738562, y: 1.1972961, z: 0.84012055}
 --- !u!54 &6351363953301915398
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2186,27 +2185,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.9815555, y: 1.264987, z: 0.62869203}
   m_Center: {x: -0.021274567, y: 0.9, z: 0.7751425}
---- !u!65 &2063775616589178319
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9148919417189041368}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.3568424, z: 1.5240765}
-  m_Center: {x: 0, y: 0.8754943, z: 1.2620387}
 --- !u!1001 &4566664819634505244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2305,15 +2283,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1482166165374461912, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1482166165374461912, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077934684333460190, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.97430754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077934684333460190, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.02452168
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077934684333460190, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077934684333460190, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2433708858120789880, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
       propertyPath: m_Value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442101724582863989, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442101724582863989, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5627687110178017762, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2322,6 +2324,14 @@ PrefabInstance:
     - target: {fileID: 5627687110178017762, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
       propertyPath: m_SizeDelta.y
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627687110178017762, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627687110178017762, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 7963607537176216233, guid: 743c0ade1fd61e244bac8f2bee7d03b3, type: 3}
       propertyPath: m_Name
