@@ -7,5 +7,6 @@ public enum SpellType
     kFire,
     kThunder,
     kWater,
+    kHeal,
     kNumOfSpells
 }
