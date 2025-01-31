@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Easing : MonoBehaviour
 {
+    public static float InOutSine(float x){
+        return -(Mathf.Cos(Mathf.PI * x) - 1) / 2;
+    }
+
     public static float OutCubic(float x)
     {
         float d1 = x - 1;
