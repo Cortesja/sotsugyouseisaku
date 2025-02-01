@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    public List<Item> items = new List<Item>();
+    private List<Item> items = new List<Item>();
 
-    [SerializeField] Transform itemContent;
-    [SerializeField] GameObject inventoryItem;
-    [SerializeField] InventoryItemManager[] inventoryItems;
+    [SerializeField] private Transform itemContent;
+    [SerializeField] private GameObject inventoryItem;
+    [SerializeField] private InventoryItemManager[] inventoryItems;
 
     private AttackManager attackManager_;
 
-    public void Start()
+    private void Start()
     {
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         attackManager_ = obj.GetComponentInChildren<AttackManager>();

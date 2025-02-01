@@ -581,7 +581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d811063fc4a54ff448354bb6d88caed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
   itemContent: {fileID: 2146609300}
   inventoryItem: {fileID: 1806726670757924085, guid: 518c814144d14744d9f1096298dcf00c, type: 3}
   inventoryItems: []
@@ -694,6 +693,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4937ae3a78a3b4a8da5f56502b3986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballPrefab_: {fileID: 3718816048913635982, guid: dd93b296fafc2b8449b163b6ccf4720e, type: 3}
+  thunderPrefab_: {fileID: 5795778402650034018, guid: 5d6c1fcb93e7d004692e7c29835a29c4, type: 3}
+  waterPrefab_: {fileID: 7266342261041042470, guid: b3445716272314249836cea991a421f6, type: 3}
+  healPrefab_: {fileID: 7266342261041042470, guid: dea4790dbfeb7c34c88fed6f485a8af3, type: 3}
+  whatIsGround_:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer_:
+    serializedVersion: 2
+    m_Bits: 128
+  player_: {fileID: 1452811427}
+  offsetDistFromPlayer_: 10
+  spawnPointRange_: 50
+  spawnLocation_: {x: 0, y: 0, z: 0}
+  spawnCooldown_: 1
 --- !u!4 &853884621
 Transform:
   m_ObjectHideFlags: 0
@@ -703,7 +717,7 @@ Transform:
   m_GameObject: {fileID: 853884619}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8098624, y: -0.2764835, z: -10.285746}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

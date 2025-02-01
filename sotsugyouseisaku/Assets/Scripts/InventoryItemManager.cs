@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class InventoryItemManager : MonoBehaviour
 {
-    Item item_;
-    [SerializeField] AttackManager attackManager_;
-    [SerializeField] Button UseButton;
+    private Item item_;
+    [SerializeField] private AttackManager attackManager_;
+    [SerializeField] private Button UseButton;
     public void UseItem()
     {
         attackManager_.SetSpell(item_);

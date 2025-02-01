@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    SpellType spellType_;
+    private SpellType spellType_;
     private Cursor cursor_;
     private Vector3 lookAtPoint_;
     private float speed_ = 30.0f;
@@ -32,7 +32,7 @@ public class AttackManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && Player.Instance.GetHasSpell())
         {
@@ -41,7 +41,7 @@ public class AttackManager : MonoBehaviour
         }
     }
 
-    void ShootProjectile()
+    private void ShootProjectile()
     {
         ////////////////////////////////////////////////////////
 
@@ -83,7 +83,7 @@ public class AttackManager : MonoBehaviour
         return dmg_;
     }
 
-    void InstantiateProjectile()
+    private void InstantiateProjectile()
     {
         GameObject projectileObj;
         switch (spellType_)

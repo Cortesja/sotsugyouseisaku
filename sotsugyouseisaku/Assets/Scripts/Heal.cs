@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Heal : MonoBehaviour
 {
-    AttackManager attackerManager_;
+    private AttackManager attackerManager_;
 
     private void Start()
     {

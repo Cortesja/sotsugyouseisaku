@@ -6,22 +6,22 @@ using UnityEngine.AI;
 public class EnemyAi : MonoBehaviour
 {
     private Transform player_;
-    public LayerMask whatIsGround_, whatIsPlayer_;
+    [SerializeField] private LayerMask whatIsGround_, whatIsPlayer_;
 
     [SerializeField] private float speed_ = 1f;
 
     //Patrolling
-    [SerializeField] Vector3 walkPoint_;
-    bool walkPointSet_;
-    [SerializeField] float walkPointRange_;
+    [SerializeField] private Vector3 walkPoint_;
+    private bool walkPointSet_;
+    [SerializeField] private float walkPointRange_;
 
     //Attacking
-    [SerializeField] float timeBetweenAttacks_;
-    bool alreadyAttacked_;
+    [SerializeField] private float timeBetweenAttacks_;
+    private bool alreadyAttacked_;
 
     //States
-    [SerializeField] float sightRange_, attackRange_;
-    [SerializeField] bool inSightRange_, inAttackRange_;
+    [SerializeField] private float sightRange_, attackRange_;
+    [SerializeField] private bool inSightRange_, inAttackRange_;
 
     private void Awake()
     {
