@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3211984386453326846}
   - component: {fileID: 8748321803674709807}
   - component: {fileID: 6134007902066635320}
+  - component: {fileID: 3103951093684479240}
   m_Layer: 0
   m_Name: Mimic
   m_TagString: Enemy
@@ -105,6 +106,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth_: 3
   healthBar_: {fileID: 8343689295863118926}
+--- !u!114 &3103951093684479240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8037066111975044623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e1088ad68075d408bf4627633256c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsGround_:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer_:
+    serializedVersion: 2
+    m_Bits: 128
+  speed_: 3
+  walkPoint_: {x: 0, y: 0, z: 0}
+  walkPointRange_: 15
+  timeBetweenAttacks_: 1
+  sightRange_: 15
+  attackRange_: 1
+  inSightRange_: 0
+  inAttackRange_: 0
 --- !u!1001 &3544378482550818026
 PrefabInstance:
   m_ObjectHideFlags: 0

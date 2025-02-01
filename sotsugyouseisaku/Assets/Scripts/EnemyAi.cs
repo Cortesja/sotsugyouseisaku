@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Mimic : MonoBehaviour
+public class EnemyAi : MonoBehaviour
 {
     private Transform player_;
     public LayerMask whatIsGround_, whatIsPlayer_;
@@ -28,7 +29,7 @@ public class Mimic : MonoBehaviour
         if (playerObj != null)
         {
             player_ = playerObj.transform;
-            Debug.Log("Player found: " + playerObj.name);
+            Debug.Log("Player found: " +  playerObj.name);
         }
         else
         {
@@ -66,7 +67,7 @@ public class Mimic : MonoBehaviour
             Vector3 direction = (walkPoint_ - transform.position).normalized;
 
             transform.position += direction * speed_ * Time.deltaTime;
-            RotateTowardsMovement(direction);
+            RotateTowardsMovement(-direction);
         }
         else
         {
@@ -87,15 +88,15 @@ public class Mimic : MonoBehaviour
             Vector3 direction = (walkPoint_ - transform.position).normalized;
 
             transform.position += direction * speed_ * Time.deltaTime;
-            RotateTowardsMovement(direction);
+            RotateTowardsMovement(-direction);
         }
-        if (distance > sightRange_)
+        if(distance > sightRange_)
         {
             walkPointSet_ = false;
             SearchForWalkPoint();
         }
     }
-
+    
 
     public void AttackPlayer()
     {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1518506642334463683}
   - component: {fileID: 1422914437117826834}
   - component: {fileID: -5350219680233376437}
+  - component: {fileID: 1889056800157304533}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -103,6 +104,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth_: 1
   healthBar_: {fileID: 7880354933206480593}
+--- !u!114 &1889056800157304533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239147464037479809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c02012423765df49b12e719b68f1116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsGround_:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer_:
+    serializedVersion: 2
+    m_Bits: 128
+  speed_: 4
+  walkPoint_: {x: 0, y: 0, z: 0}
+  walkPointRange_: 20
+  timeBetweenAttacks_: 1
+  sightRange_: 20
+  attackRange_: 1
+  inSightRange_: 0
+  inAttackRange_: 0
 --- !u!1001 &511574690273410804
 PrefabInstance:
   m_ObjectHideFlags: 0
