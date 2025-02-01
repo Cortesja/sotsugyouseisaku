@@ -26,6 +26,17 @@ public class Health : MonoBehaviour
         if (currentHealth_ > 0) { return; }
         Death();
     }
+
+    public void Heal(float point)
+    {
+        currentHealth_ += point;
+        UpdateHealth();
+        if (currentHealth_ >= maxHealth_)
+        {
+            currentHealth_ = maxHealth_;
+        }
+    }
+
     private void Death()
     {
         Destroy(gameObject);

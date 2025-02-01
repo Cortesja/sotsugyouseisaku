@@ -17,6 +17,8 @@ public class AttackManager : MonoBehaviour
     private GameObject thunderPrefab_;
     [SerializeField]
     private GameObject waterPrefab_;
+    [SerializeField]
+    private GameObject healPrefab_;
 
     // Start is called before the first frame update
     void Start()
@@ -100,6 +102,16 @@ public class AttackManager : MonoBehaviour
                 speed_ = 15.0f;
                 projectileObj = Instantiate(waterPrefab_, transform.position, Quaternion.identity) as GameObject;
                 projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * speed_;
+                break;
+            case SpellType.kHeal:
+                projectileObj = Instantiate(healPrefab_, transform.position, Quaternion.identity) as GameObject;
+                
+                Health healthComponent;
+                healthComponent = GetComponentInParent<Health>();
+                if (healthComponent)
+                {
+                    healthComponent.Heal(GetSpellDmg());
+                }
                 break;
         }
     }

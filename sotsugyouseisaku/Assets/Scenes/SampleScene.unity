@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2258,6 +2257,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2451893043025416988, guid: 92ff95e2a370fdf499b397e7653c3a9b, type: 3}
+      propertyPath: healPrefab_
+      value: 
+      objectReference: {fileID: 8367713065908399000, guid: e62a4d374aad71a4499dfddded528b47, type: 3}
+    - target: {fileID: 2451893043025416988, guid: 92ff95e2a370fdf499b397e7653c3a9b, type: 3}
       propertyPath: waterPrefab_
       value: 
       objectReference: {fileID: 1283302202710788520, guid: c8cd534bd892cf54b933ef9fcfbf7cdd, type: 3}
@@ -2738,7 +2741,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270190946161027763, guid: 5332d8d7327b17642b47807ac7cebe87, type: 3}
       propertyPath: m_Value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4994774234168842635, guid: 5332d8d7327b17642b47807ac7cebe87, type: 3}
       propertyPath: m_AnchorMax.x

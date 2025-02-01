@@ -13,7 +13,7 @@ public class CurrentSpell_UI : MonoBehaviour
     [SerializeField] private Sprite thunderUiImage_;
     [SerializeField] private Sprite waterUiImage_;
     [SerializeField] private Sprite healUiImage_;
-    private Image currentSprite_;
+    private Sprite currentSprite_;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class CurrentSpell_UI : MonoBehaviour
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         attackManager_ = obj.GetComponentInChildren<AttackManager>();
 
-        if (currentSprite_ == null) { currentSprite_ = GetComponent<Image>(); }
+        if (currentSprite_ == null) { currentSprite_ = GetComponent<Sprite>(); }
 
         fireUiImage_ = Resources.Load<Sprite>("OriginalModels/SpellCard/Texture/fire_ui");
         thunderUiImage_ = Resources.Load<Sprite>("OriginalModels/SpellCard/Texture/thunder_ui");
@@ -37,19 +37,19 @@ public class CurrentSpell_UI : MonoBehaviour
         switch (spellType_)
         {
             case SpellType.kFire:
-                currentSprite_.sprite = fireUiImage_;
+                currentSprite_ = fireUiImage_;
                 break;
             case SpellType.kThunder:
-                currentSprite_.sprite = thunderUiImage_;
+                currentSprite_ = thunderUiImage_;
                 break;
             case SpellType.kWater:
-                currentSprite_.sprite = waterUiImage_;
+                currentSprite_ = waterUiImage_;
                 break;
             case SpellType.kHeal:
-                currentSprite_.sprite = healUiImage_;
+                currentSprite_ = healUiImage_;
                 break;
             default:
-                currentSprite_.sprite = fireUiImage_;
+                currentSprite_ = fireUiImage_;
                 break;
         }
     }

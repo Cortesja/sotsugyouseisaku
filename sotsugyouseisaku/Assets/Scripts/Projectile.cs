@@ -26,7 +26,6 @@ public class Projectile : MonoBehaviour
                     healthComponent.Damage(attackManager_.GetSpellDmg());
                 }
             }
-
             Vector3  contactPoint = other.transform.position;
 
             var impact = Instantiate(impact_vfx, contactPoint, Quaternion.identity) as GameObject;
@@ -34,7 +33,5 @@ public class Projectile : MonoBehaviour
             Destroy(impact, 2);
             Destroy(gameObject);
         }
-
-       
     }
 }
