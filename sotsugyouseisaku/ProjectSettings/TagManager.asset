@@ -6,9 +6,7 @@ TagManager:
   tags:
   - Floor
   - Item
-  - Attack
-  - Bullet
-  - Enemy
+  - Search
   layers:
   - Default
   - TransparentFX
