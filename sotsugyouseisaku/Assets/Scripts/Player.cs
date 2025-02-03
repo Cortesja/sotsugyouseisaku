@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider))]
 
@@ -34,9 +35,9 @@ public class Player : MonoBehaviour
             if (hasHealth)
             {
                 healthComponent_.Damage(1);
-                if(!hasHealth)
+                if (GetIsDead())
                 {
-                    isDead_ = true;
+                    SceneManager.LoadScene("GameOverScene");
                 }
             }
         }

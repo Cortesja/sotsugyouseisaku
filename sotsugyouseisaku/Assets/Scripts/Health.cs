@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Collider))]
@@ -10,7 +11,15 @@ public class Health : MonoBehaviour
     private float currentHealth_;
     private Collider collider_;
 
+    private bool isDead_ = false;
+
     [SerializeField] private Slider healthBar_;
+
+    public bool GetIsDead()
+    {
+        return isDead_;
+    }
+
     private void Awake()
     {
         currentHealth_ = maxHealth_;
@@ -40,7 +49,8 @@ public class Health : MonoBehaviour
     private void Death()
     {
         //Destroy(gameObject);
-        gameObject.SetActive(false);    
+        isDead_ = true;
+        gameObject.SetActive(false);
     }
 
     private void UpdateHealth()

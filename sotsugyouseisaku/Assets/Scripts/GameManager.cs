@@ -169,12 +169,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Player.Instance.GetIsDead())
-        {
-            SceneManager.LoadScene("GameOverScene");
-        }
-
-
         // Countdown spawn timer
         if (!itemCanSpawn_)
         {

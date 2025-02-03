@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 using UnityEngine.Rendering;
 
 [RequireComponent (typeof(Collider))]
