@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 [RequireComponent (typeof(Collider))]
-
 public class SpellCard : MonoBehaviour
 {
     [SerializeField] private Material material_;
