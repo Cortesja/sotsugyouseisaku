@@ -1265,6 +1265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3409064565429314317}
   - component: {fileID: 1559621221940377529}
+  - component: {fileID: 4854375532754863528}
   m_Layer: 0
   m_Name: Mimic
   m_TagString: Untagged
@@ -1281,7 +1282,7 @@ Transform:
   m_GameObject: {fileID: 8290016779383124169}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.94, y: 0.00000023841858, z: -10.05}
+  m_LocalPosition: {x: 1.94, y: 0.00000023841858, z: -10.19}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1317,6 +1318,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.23, y: 2.96, z: 2.68}
   m_Center: {x: 0, y: 1.28, z: 1.13}
+--- !u!114 &4854375532754863528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290016779383124169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80455b214f4bf4e43a54da4ec364469f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startAngle_: {x: 0, y: 20, z: 15}
+  endAngle_: {x: 0, y: -20, z: -15}
+  motionTime_: 2
 --- !u!1 &8379455278955069755
 GameObject:
   m_ObjectHideFlags: 0
