@@ -13,7 +13,8 @@ public class Cursor : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        camera_ = GetComponent<Camera>();    
+        camera_ = GetComponent<Camera>();
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
     }
 
     // Update is called once per frame
