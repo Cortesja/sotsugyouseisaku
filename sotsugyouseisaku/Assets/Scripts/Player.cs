@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public static Player Instance;
     private Health healthComponent_;
 
-    bool isDead_ = false;
     private void Awake()
     {
         Instance = this;
