@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1518506642334463683}
   - component: {fileID: 1422914437117826834}
   - component: {fileID: -5350219680233376437}
-  - component: {fileID: 1889056800157304533}
+  - component: {fileID: -7009849734101183581}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -57,7 +57,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59aa9a0726093a4428148475e1ddf260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth_: 1
+  maxHealth_: 2
   healthBar_: {fileID: 7880354933206480593}
---- !u!114 &1889056800157304533
+--- !u!114 &-7009849734101183581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2239147464037479809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c02012423765df49b12e719b68f1116, type: 3}
+  m_Script: {fileID: 11500000, guid: a307031a379960443b1a5a1749191048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   whatIsGround_:

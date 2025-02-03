@@ -39,7 +39,8 @@ public class Health : MonoBehaviour
 
     private void Death()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);    
     }
 
     private void UpdateHealth()

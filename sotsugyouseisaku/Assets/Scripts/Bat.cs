@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent (typeof(Collider))]
-public class EnemyAi : MonoBehaviour
+public class Bat : MonoBehaviour
 {
     private Transform player_;
     [SerializeField] private LayerMask whatIsGround_, whatIsPlayer_;
@@ -13,17 +10,17 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float speed_ = 1f;
 
     //Patrolling
-    [SerializeField] private Vector3 walkPoint_;
-    private bool walkPointSet_;
-    [SerializeField] private float walkPointRange_;
+    [SerializeField] Vector3 walkPoint_;
+    bool walkPointSet_;
+    [SerializeField] float walkPointRange_;
 
     //Attacking
-    [SerializeField] private float timeBetweenAttacks_;
-    private bool alreadyAttacked_;
+    [SerializeField] float timeBetweenAttacks_;
+    bool alreadyAttacked_;
 
     //States
-    [SerializeField] private float sightRange_, attackRange_;
-    [SerializeField] private bool inSightRange_, inAttackRange_;
+    [SerializeField] float sightRange_, attackRange_;
+    [SerializeField] bool inSightRange_, inAttackRange_;
 
     private void Awake()
     {
@@ -31,7 +28,7 @@ public class EnemyAi : MonoBehaviour
         if (playerObj != null)
         {
             player_ = playerObj.transform;
-            Debug.Log("Player found: " +  playerObj.name);
+            Debug.Log("Player found: " + playerObj.name);
         }
         else
         {
@@ -92,18 +89,18 @@ public class EnemyAi : MonoBehaviour
             transform.position += direction * speed_ * Time.deltaTime;
             RotateTowardsMovement(-direction);
         }
-        if(distance > sightRange_)
+        if (distance > sightRange_)
         {
             walkPointSet_ = false;
             SearchForWalkPoint();
         }
     }
-    
+
 
     public void AttackPlayer()
     {
         //Make sure enemy doesnt move
-        transform.position = Vector3.zero;
+        //transform.position = Vector3.zero;
         transform.LookAt(player_);
 
         if (!alreadyAttacked_)

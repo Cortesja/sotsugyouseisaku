@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private SpellType spellType_;
@@ -169,6 +169,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Player.Instance.GetIsDead())
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+
+
         // Countdown spawn timer
         if (!itemCanSpawn_)
         {

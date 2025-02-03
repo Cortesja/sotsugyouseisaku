@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mimic : MonoBehaviour
 {
     private Transform player_;
-    public LayerMask whatIsGround_, whatIsPlayer_;
+    [SerializeField] private LayerMask whatIsGround_, whatIsPlayer_;
 
     [SerializeField] private float speed_ = 1f;
 
@@ -100,7 +100,7 @@ public class Mimic : MonoBehaviour
     public void AttackPlayer()
     {
         //Make sure enemy doesnt move
-        transform.position = Vector3.zero;
+        //transform.position = Vector3.zero;
         transform.LookAt(player_);
 
         if (!alreadyAttacked_)
