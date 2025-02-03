@@ -23,8 +23,6 @@ public class Player : MonoBehaviour
     }
     public bool GetHasSpell() { return hasSpell_; }
 
-    public bool GetIsDead() { return isDead_; }
-
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Enemy")) { return; }
@@ -35,7 +33,7 @@ public class Player : MonoBehaviour
             if (hasHealth)
             {
                 healthComponent_.Damage(1);
-                if (GetIsDead())
+                if (healthComponent_.GetIsDead())
                 {
                     SceneManager.LoadScene("GameOverScene");
                 }

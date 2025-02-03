@@ -23,12 +23,23 @@ public class AttackManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Camera.main.TryGetComponent<Cursor>(out cursor_);
-        Assert.IsTrue(cursor_ != null, "Cursor not found");
+
+#if UNITY_EDITOR
+
         GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
         Assert.IsNotNull(cameraObject);
+
+        Camera.main.TryGetComponent<Cursor>(out cursor_);
+        Assert.IsTrue(cursor_ != null, "Cursor not found");
+        
         bool isFindCursor = cameraObject.TryGetComponent(out cursor_);
         Assert.IsTrue(isFindCursor);
+
+#endif
+
+        Camera.main.TryGetComponent<Cursor>(out cursor_);
+
+
     }
 
     // Update is called once per frame
