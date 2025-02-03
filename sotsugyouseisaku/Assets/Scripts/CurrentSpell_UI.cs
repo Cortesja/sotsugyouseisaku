@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -6,14 +6,16 @@ using UnityEngine.UI;
 
 public class CurrentSpell_UI : MonoBehaviour
 {
-    [SerializeField] AttackManager attackManager_;
+    [SerializeField] private AttackManager attackManager_;
 
     private SpellType spellType_;
     [SerializeField] private Sprite fireUiImage_;
     [SerializeField] private Sprite thunderUiImage_;
     [SerializeField] private Sprite waterUiImage_;
     [SerializeField] private Sprite healUiImage_;
-    private Sprite currentSprite_;
+    [SerializeField] private Sprite defaultUiImage_;
+
+    private Image uiImage_;
 
     // Start is called before the first frame update
     void Start()
@@ -21,35 +23,49 @@ public class CurrentSpell_UI : MonoBehaviour
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         attackManager_ = obj.GetComponentInChildren<AttackManager>();
 
-        if (currentSprite_ == null) { currentSprite_ = GetComponent<Sprite>(); }
+        // Get the Image component attached to this GameObject
+        uiImage_ = GetComponent<Image>();
+        if (uiImage_ == null)
+        {
+            Debug.LogError("❌ No Image component found on " + gameObject.name);
+        }
+    }
 
-        fireUiImage_ = Resources.Load<Sprite>("OriginalModels/SpellCard/Texture/fire_ui");
-        thunderUiImage_ = Resources.Load<Sprite>("OriginalModels/SpellCard/Texture/thunder_ui");
-        waterUiImage_ = Resources.Load<Sprite>("OriginalModels/SpellCard/Texture/water_ui");
-        healUiImage_ = Resources.Load<Sprite>("OriginalModels/SpellCard/Texture/heal_ui");
+    private void Awake()
+    {
+        fireUiImage_ = Resources.Load<Sprite>("fire_ui");
+        thunderUiImage_ = Resources.Load<Sprite>("thunder_ui");
+        waterUiImage_ = Resources.Load<Sprite>("water_ui");
+        healUiImage_ = Resources.Load<Sprite>("heal_ui");
+        defaultUiImage_ = Resources.Load<Sprite>("default_ui");
     }
 
     // Update is called once per frame
     void Update()
     {
-        spellType_ = attackManager_.GetSpell();
-        
+        if (attackManager_ == null || uiImage_ == null) return;
+
+        if (Player.Instance.GetHasSpell()) { spellType_ = attackManager_.GetSpell(); } else
+        {
+            spellType_ = SpellType.kNumOfSpells;
+        }
+
         switch (spellType_)
         {
             case SpellType.kFire:
-                currentSprite_ = fireUiImage_;
+                uiImage_.sprite = fireUiImage_;
                 break;
             case SpellType.kThunder:
-                currentSprite_ = thunderUiImage_;
+                uiImage_.sprite = thunderUiImage_;
                 break;
             case SpellType.kWater:
-                currentSprite_ = waterUiImage_;
+                uiImage_.sprite = waterUiImage_;
                 break;
             case SpellType.kHeal:
-                currentSprite_ = healUiImage_;
+                uiImage_.sprite = healUiImage_;
                 break;
             default:
-                currentSprite_ = fireUiImage_;
+                uiImage_.sprite = defaultUiImage_;
                 break;
         }
     }

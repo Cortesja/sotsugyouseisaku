@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private SpellType spellType_;
 
-    [SerializeField, Header("Prefabs")]
+    [SerializeField, Header("Item Prefabs")]
     private SpellCard fireballPrefab_;
     [SerializeField]
     private SpellCard thunderPrefab_;
@@ -15,22 +15,41 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SpellCard healPrefab_;
 
+    [SerializeField, Header("Enemy Prefabs")]
+    private GameObject golemPrefab_;
+    [SerializeField]
+    private GameObject mimicPrefab_;
+    [SerializeField]
+    private GameObject batPrefab_;
+
     [SerializeField] private LayerMask whatIsGround_, whatIsPlayer_;
 
     [SerializeField] private Transform player_;
 
     //Set Distance from player
-    [SerializeField] float offsetDistFromPlayer_;
-    [SerializeField] float spawnPointRange_;
-    bool isAwayFromPlayer_;
-
-    //Set location
-    [SerializeField] private Vector3 spawnLocation_;
-    bool canSpawn_;
-
+    [SerializeField,Header ("Item Variables")]
+    private float offsetDistFromPlayer_;
+    [SerializeField] 
+    private float itemSpawnPointRange_;
+    [SerializeField] 
+    private Vector3 itemSpawnLocation_;
     //SpawnTimer
-    [SerializeField] private float spawnCooldown_ = 5f; // Set cooldown between spawns
-    private float spawnTimer_;
+    [SerializeField]
+    private float itemSpawnCooldown_ = 5f; // Set cooldown between spawns
+    private float itemSpawnTimer_;
+
+    private bool itemCanSpawn_;
+
+    [SerializeField, Header("Enemy Variables")]
+    private float enemySpawnPointRange_;
+    [SerializeField]
+    private Vector3 enemySpawnLocation_;
+    [SerializeField]
+    private float enemySpawnCooldown_;
+    private float enemySpawnTimer_;
+
+    private bool enemyCanSpawn_;
+    private int enemyType_; //used to determine enemyType. 
 
     private void Awake()
     {
@@ -46,73 +65,136 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private Vector3 RandomizeLocation()
+    private Vector3 RandomizeItemLocation()
     {
         //Calculate Random point in range
-        float randomZ = Random.Range(-spawnPointRange_, spawnPointRange_);
-        float randomX = Random.Range(-spawnPointRange_, spawnPointRange_);
+        float randomZ = Random.Range(-itemSpawnPointRange_, itemSpawnPointRange_);
+        float randomX = Random.Range(-itemSpawnPointRange_, itemSpawnPointRange_);
 
-        spawnLocation_ = new Vector3(randomX, 0.5f, randomZ); //0.5f is above the ground
+        itemSpawnLocation_ = new Vector3(randomX, 0.5f, randomZ); //0.5f is above the ground
 
-        return spawnLocation_;
+        return itemSpawnLocation_;
     }
 
-    private void CheckSpawnLocation()
+    private void CheckItemSpawnLocation()
     {
-        float distance = Vector3.Distance(spawnLocation_, player_.position);
+        float distance = Vector3.Distance(itemSpawnLocation_, player_.position);
 
         if (distance < offsetDistFromPlayer_)
         {
-            spawnLocation_ = Vector3.zero; //reset random location
-            RandomizeLocation();
+            itemSpawnLocation_ = Vector3.zero; //reset random location
+            RandomizeItemLocation();
         }
         else
         {
-            canSpawn_ = true;
+            itemCanSpawn_ = true;
         }
     }
 
     private void SpawnSpellCard()
     {
-        if (canSpawn_)
+        if (itemCanSpawn_)
         {
             SpellCard spawnSpellCard;
             spellType_ = (SpellType)Random.Range(0, (int)SpellType.kNumOfSpells);
             switch (spellType_)
             {
                 case SpellType.kFire:
-                    spawnSpellCard = Instantiate(fireballPrefab_, spawnLocation_, Quaternion.identity);
+                    spawnSpellCard = Instantiate(fireballPrefab_, itemSpawnLocation_, Quaternion.identity);
                     break;
                 case SpellType.kThunder:
-                    spawnSpellCard = Instantiate(thunderPrefab_, spawnLocation_, Quaternion.identity);
+                    spawnSpellCard = Instantiate(thunderPrefab_, itemSpawnLocation_, Quaternion.identity);
                     break;
                 case SpellType.kWater:
-                    spawnSpellCard = Instantiate(waterPrefab_, spawnLocation_, Quaternion.identity);
+                    spawnSpellCard = Instantiate(waterPrefab_, itemSpawnLocation_, Quaternion.identity);
                     break;
                 case SpellType.kHeal:
-                    spawnSpellCard = Instantiate(healPrefab_, spawnLocation_, Quaternion.identity);
+                    spawnSpellCard = Instantiate(healPrefab_, itemSpawnLocation_, Quaternion.identity);
                     break;
             }
 
-            canSpawn_ = false;
-            spawnTimer_ = spawnCooldown_; // Reset the timer after spawning
+            itemCanSpawn_ = false;
+            itemSpawnTimer_ = itemSpawnCooldown_; // Reset the timer after spawning
+        }
+    }
+
+    private Vector3 RandomizeEnemyLocation()
+    {
+        //Calculate Random point in range
+        float randomZ = Random.Range(-itemSpawnPointRange_, itemSpawnPointRange_);
+        float randomX = Random.Range(-itemSpawnPointRange_, itemSpawnPointRange_);
+
+        itemSpawnLocation_ = new Vector3(randomX, 0.5f, randomZ); //0.5f is above the ground
+        return enemySpawnLocation_;
+    }
+
+    private void CheckEnemySpawnLocation()
+    {
+        float distance = Vector3.Distance(enemySpawnLocation_, player_.position);
+
+        if (distance < offsetDistFromPlayer_)
+        {
+            enemySpawnLocation_ = Vector3.zero; //reset random location
+            RandomizeEnemyLocation();
+        }
+        else
+        {
+            enemyCanSpawn_ = true;
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        if (enemyCanSpawn_)
+        {
+            int enemyType = Random.Range(0, 3);
+            GameObject enemyObj;
+            switch (enemyType)
+            {
+                case 0:
+                    enemyObj = Instantiate(golemPrefab_, itemSpawnLocation_, Quaternion.identity) as GameObject;
+                    break;
+                case 1:
+                    enemyObj = Instantiate(mimicPrefab_, itemSpawnLocation_, Quaternion.identity) as GameObject;
+                    break;
+                case 2:
+                    enemyObj = Instantiate(batPrefab_, itemSpawnLocation_, Quaternion.identity) as GameObject;
+                    break;
+            }
+
+            enemyCanSpawn_ = false;
+            enemySpawnTimer_ = enemySpawnCooldown_; // Reset the timer after spawning
         }
     }
 
     private void Update()
     {
         // Countdown spawn timer
-        if (!canSpawn_)
+        if (!itemCanSpawn_)
         {
-            spawnTimer_ -= Time.deltaTime;
+            itemSpawnTimer_ -= Time.deltaTime;
 
-            if (spawnTimer_ <= 0f)
+            if (itemSpawnTimer_ <= 0f)
             {
-                canSpawn_ = true;
-                spawnLocation_ = Vector3.zero; //reset random location
-                RandomizeLocation();
-                CheckSpawnLocation();
+                itemCanSpawn_ = true;
+                itemSpawnLocation_ = Vector3.zero; //reset random location
+                RandomizeItemLocation();
+                CheckItemSpawnLocation();
                 SpawnSpellCard();
+            }
+        }
+
+        if (!enemyCanSpawn_)
+        {
+            enemySpawnTimer_ -= Time.deltaTime;
+
+            if(enemySpawnTimer_ <= 0f)
+            {
+                enemyCanSpawn_ = true;
+                enemySpawnLocation_ = Vector3.zero;
+                RandomizeEnemyLocation();
+                CheckEnemySpawnLocation();
+                SpawnEnemy();
             }
         }
     }

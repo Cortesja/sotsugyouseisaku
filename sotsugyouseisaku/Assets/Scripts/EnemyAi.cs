@@ -126,4 +126,12 @@ public class EnemyAi : MonoBehaviour
         if (inSightRange_ && !inAttackRange_) { ChasePlayer(); }
         if (inSightRange_ && inAttackRange_) { AttackPlayer(); }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+
+        }
+    }
 }

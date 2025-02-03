@@ -39,5 +39,7 @@ public class SpellCard : MonoBehaviour
         //ブレンダーのモデルの向きは後ろ向きだったので
         Vector3 testAngle = new Vector3(0f, rotationSpeed_, 0f);
         transform.rotation *= Quaternion.Euler(testAngle);
+
+        Destroy(gameObject, 30f);
     }
 }

@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class Heal : MonoBehaviour
 {
-    private AttackManager attackerManager_;
-
-    private void Start()
+    private void Update()
     {
-        GameObject obj = GameObject.FindGameObjectWithTag("Player");
-        attackerManager_ = obj.GetComponentInChildren<AttackManager>();
+        Destroy(gameObject, 2f);
     }
 }

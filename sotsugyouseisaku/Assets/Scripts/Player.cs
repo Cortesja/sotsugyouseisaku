@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool hasSpell_;
+    private bool hasSpell_;
     public static Player Instance;
     private void Awake()
     {

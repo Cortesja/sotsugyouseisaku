@@ -17,8 +17,8 @@ public class ItemPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             this.gameObject.SetActive(false);
+            Pickup();
+            InventoryManager.Instance.ListItems();
         }
-        Pickup();
-        InventoryManager.Instance.ListItems();
     }
 }
