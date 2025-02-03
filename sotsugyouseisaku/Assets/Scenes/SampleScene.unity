@@ -697,6 +697,9 @@ MonoBehaviour:
   thunderPrefab_: {fileID: 5795778402650034018, guid: 5d6c1fcb93e7d004692e7c29835a29c4, type: 3}
   waterPrefab_: {fileID: 7266342261041042470, guid: b3445716272314249836cea991a421f6, type: 3}
   healPrefab_: {fileID: 7266342261041042470, guid: dea4790dbfeb7c34c88fed6f485a8af3, type: 3}
+  golemPrefab_: {fileID: 9148919417189041368, guid: 9e7fe3378be6e7e4fb3f868ab39fc7e7, type: 3}
+  mimicPrefab_: {fileID: 8037066111975044623, guid: 1afe09ee2a301e24d830b336609c5c37, type: 3}
+  batPrefab_: {fileID: 2239147464037479809, guid: 3823422634207364d8a9e80d724d5473, type: 3}
   whatIsGround_:
     serializedVersion: 2
     m_Bits: 64
@@ -705,9 +708,12 @@ MonoBehaviour:
     m_Bits: 128
   player_: {fileID: 1452811427}
   offsetDistFromPlayer_: 10
-  spawnPointRange_: 50
-  spawnLocation_: {x: 0, y: 0, z: 0}
-  spawnCooldown_: 1
+  itemSpawnPointRange_: 45
+  itemSpawnLocation_: {x: 0, y: 0, z: 0}
+  itemSpawnCooldown_: 1
+  enemySpawnPointRange_: 10
+  enemySpawnLocation_: {x: 0, y: 0, z: 0}
+  enemySpawnCooldown_: 3
 --- !u!4 &853884621
 Transform:
   m_ObjectHideFlags: 0
@@ -774,6 +780,10 @@ PrefabInstance:
     - target: {fileID: 331519713645085250, guid: b48c089d83afefc4ea701ac5ea838489, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287757157569178243, guid: b48c089d83afefc4ea701ac5ea838489, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1009,6 +1019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 7287757157569178243, guid: b48c089d83afefc4ea701ac5ea838489, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1143,7 +1157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12cb3b8c84a000f43b80b290d2e9cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasSpell_: 0
 --- !u!1 &1491250016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,10 +1208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackManager_: {fileID: 0}
-  fireUiImage_: {fileID: 21300000, guid: 6d446f436b5e3de42a1cf182f5dd5d74, type: 3}
-  thunderUiImage_: {fileID: 21300000, guid: 5215b39669901dc4981731c2aef80319, type: 3}
-  waterUiImage_: {fileID: 21300000, guid: 63557c5e25a34124bb390858a8c7183f, type: 3}
-  healUiImage_: {fileID: 21300000, guid: 4783f2847d6b23c469b0f72d6cd989f0, type: 3}
+  fireUiImage_: {fileID: 21300000, guid: f9b7b35f50e302a419dc3b47e8bb6a36, type: 3}
+  thunderUiImage_: {fileID: 21300000, guid: c81b17b8c6f74cb4384b255b1eb17422, type: 3}
+  waterUiImage_: {fileID: 21300000, guid: 094c712162e277d43b625277a2e8700b, type: 3}
+  healUiImage_: {fileID: 21300000, guid: 94b193c2795cccc44aaaa57ea47c6a58, type: 3}
+  defaultUiImage_: {fileID: 0}
 --- !u!114 &1491250019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1302,10 @@ PrefabInstance:
     - target: {fileID: 331519713645085250, guid: b48c089d83afefc4ea701ac5ea838489, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287757157569178243, guid: b48c089d83afefc4ea701ac5ea838489, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1712,6 +1730,10 @@ PrefabInstance:
     - target: {fileID: 331519713645085250, guid: b48c089d83afefc4ea701ac5ea838489, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287757157569178243, guid: b48c089d83afefc4ea701ac5ea838489, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -131,7 +131,12 @@ public class EnemyAi : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
+            Health healthComponent;
+            bool hasHealth = other.TryGetComponent(out healthComponent);
+            if (hasHealth)
+            {
+                healthComponent.Damage(1);
+            }
         }
     }
 }
